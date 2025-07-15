@@ -1,0 +1,130 @@
+// 中文字体优化
+
+// 中文字体栈
+$font-family-chinese: 
+  "PingFang SC", 
+  "Hiragino Sans GB", 
+  "Microsoft YaHei", 
+  "WenQuanYi Micro Hei", 
+  "Helvetica Neue", 
+  Arial, 
+  sans-serif;
+
+$font-family-code: 
+  "SF Mono", 
+  "Monaco", 
+  "Inconsolata", 
+  "Roboto Mono", 
+  "Source Code Pro", 
+  "Consolas", 
+  monospace;
+
+// 基础字体设置
+body {
+  font-family: $font-family-chinese;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color $transition-normal, color $transition-normal;
+}
+
+// 标题优化
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-chinese;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+  margin-top: $spacing-xl;
+  margin-bottom: $spacing-md;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 { font-size: $font-size-xxl * 1.5; }
+h2 { font-size: $font-size-xxl * 1.25; }
+h3 { font-size: $font-size-xxl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+// 段落和文本
+p {
+  margin-bottom: $spacing-md;
+  color: var(--text-color);
+}
+
+// 链接样式
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+}
+
+// 代码样式
+code {
+  font-family: $font-family-code;
+  font-size: 0.9em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: var(--text-color);
+}
+
+pre {
+  font-family: $font-family-code;
+  background-color: var(--code-bg);
+  padding: $spacing-md;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: $spacing-md 0;
+  
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+// 引用样式
+blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: $spacing-md;
+  margin: $spacing-lg 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+// 列表样式
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// 表格样式
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $spacing-lg 0;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: $spacing-sm $spacing-md;
+  text-align: left;
+}
+
+th {
+  background-color: var(--code-bg);
+  font-weight: 600;
+}

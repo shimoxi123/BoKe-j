@@ -1,0 +1,55 @@
+// 自定义变量和颜色方案
+
+// 基础颜色定义
+:root {
+  // 浅色主题
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --accent-color: #0066cc;
+  --accent-hover: #0052a3;
+  --border-color: #e1e4e8;
+  --code-bg: #f6f8fa;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+// 深色主题
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --accent-color: #4da6ff;
+  --accent-hover: #66b3ff;
+  --border-color: #30363d;
+  --code-bg: #2d333b;
+  --header-bg: #21262d;
+  --card-bg: #21262d;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+// 响应式断点
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+// 间距系统
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// 字体大小
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-xxl: 1.5rem;
+
+// 过渡动画
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;

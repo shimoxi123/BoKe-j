@@ -1,0 +1,130 @@
+// 主题切换按钮样式
+
+.theme-toggle {
+  position: fixed;
+  top: $spacing-md;
+  right: $spacing-md;
+  z-index: 1000;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-normal;
+  box-shadow: 0 2px 8px var(--shadow);
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px var(--shadow);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  // 图标样式
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform $transition-normal;
+    
+    &.sun-icon {
+      color: #ffa500;
+    }
+    
+    &.moon-icon {
+      color: #4a90e2;
+    }
+  }
+  
+  // 移动端适配
+  @media (max-width: $mobile) {
+    width: 44px;
+    height: 44px;
+    top: $spacing-sm;
+    right: $spacing-sm;
+    
+    .theme-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// 主题切换动画
+.theme-transition {
+  transition: 
+    background-color $transition-normal,
+    color $transition-normal,
+    border-color $transition-normal,
+    box-shadow $transition-normal;
+}
+
+// 为所有需要主题切换的元素添加过渡
+* {
+  transition: 
+    background-color $transition-normal,
+    color $transition-normal,
+    border-color $transition-normal;
+}
+
+// 页面整体布局调整
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  transition: all $transition-normal;
+}
+
+.site-footer {
+  background-color: var(--header-bg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all $transition-normal;
+}
+
+.post, .page-content {
+  background-color: var(--bg-color);
+  transition: background-color $transition-normal;
+}
+
+// 卡片样式
+.post-list-item, .post-content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: all $transition-normal;
+  
+  &:hover {
+    box-shadow: 0 4px 8px var(--shadow);
+  }
+}
+
+// 导航链接
+.site-nav .page-link {
+  color: var(--text-color);
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+// 响应式设计优化
+@media (max-width: $mobile) {
+  .theme-toggle {
+    // 确保在移动端不会遮挡内容
+    position: fixed;
+    z-index: 1001;
+  }
+  
+  .site-header {
+    padding-right: 60px; // 为主题切换按钮留出空间
+  }
+}
